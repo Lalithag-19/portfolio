@@ -1,0 +1,43 @@
+# Workflow for building and deploying the React portfolio to GitHub Pages
+name: Deploy Portfolio to GitHub Pages
+
+# This action runs automatically on any push to the "main" branch
+on:
+  push:
+    branches: [ "main" ]
+
+# A workflow is made up of one or more jobs
+jobs:
+  # This job builds and deploys the site
+  build-and-deploy:
+    # It runs on the latest version of Ubuntu
+    runs-on: ubuntu-latest
+
+    # These are the sequential steps the job will take
+    steps:
+      # 1. Checks-out your repository's code so the job can access it
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # 2. Sets up the correct version of Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # 3. Installs all the project dependencies (like React)
+      - name: Install Dependencies
+        run: npm install
+
+      # 4. Builds the React application for production
+      - name: Build Project
+        run: npm run build
+
+      # 5. Deploys the built site to a special 'gh-pages' branch
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # The 'dist' folder is where Vite places the built files
+          publish_dir: ./dist 
+
