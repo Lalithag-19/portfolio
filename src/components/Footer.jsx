@@ -20,7 +20,7 @@ const Footer = () => {
                     <IconMail size={24} />
                 </a>
             </div>
-            <p>Designed & Built by Lalitha Gowravarapu</p>
+            <p>Designed & Built by Lalitha Gowravarapu &copy; {new Date().getFullYear()}</p>
         </footer>
     );
 };

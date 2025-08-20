@@ -6,10 +6,10 @@ const ContactSection = () => {
     return (
         <AnimatedSection id="contact">
             <div className="contact-content">
-                <h2 className="contact-title">What's Next?</h2>
+                <h2 className="contact-title">Let’s Connect</h2>
                 <h3 className="contact-heading">Get In Touch</h3>
                 <p className="contact-text">
-                    I'm currently open to new opportunities and my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                    I’m always excited to connect with fellow developers, recruiters, or anyone interested in tech. Whether you have a question, a project idea, or just want to say hello, feel free to reach out!
                 </p>
                 <a href="mailto:lalitha120819@gmail.com" className="btn">
                     Say Hello

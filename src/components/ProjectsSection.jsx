@@ -30,27 +30,33 @@ const ProjectsSection = () => {
     const projects = [
         {
             title: 'Real-Time Chat App',
-            description: 'This is a Python socket-based chat room project that allows multiple users to connect to a server, join or create chat rooms, and exchange messages in real time',
-            tags: ['Python', 'MySQL'],
+            description: 'A Python socket-based chat room that lets users join, create rooms, and exchange messages in real time. Built with a focus on reliability and user experience.',
+            tags: ['Python', 'MySQL', 'Socket.io'],
             github: 'https://github.com/Lalithag-19/chat_application_project.git',
         },
         {
-            title: 'Face_Recognition',
-            description: 'A face recognition system that can detect and recognize faces in images or video streams.',
+            title: 'Face Recognition System',
+            description: 'A robust face recognition system using OpenCV and Python, capable of detecting and recognizing faces in images and video streams.',
             tags: ['Python', 'OpenCV', 'Face Recognition'],
             github: 'https://github.com/Lalithag-19/face_recognition.git',
         },
         {
             title: 'Portfolio Website',
-            description: 'My first personal portfolio website. A fun project to learn the fundamentals of web development and responsive design.',
-            tags: ['HTML', 'CSS', 'JavaScript','React'],
+            description: 'A modern, responsive portfolio website to showcase my projects, skills, and contact information. Built with React and styled for a professional look.',
+            tags: ['React', 'CSS', 'JavaScript', 'Vite'],
             github: 'https://github.com/Lalithag-19/portfolio.git',
+        },
+        {
+            title: 'Leave Management System',
+            description: 'A web app for managing employee leave requests, featuring dynamic leave balance visualization.',
+            tags: ['Node.js', 'Express', 'MongoDB', 'React'],
+            github: 'https://github.com/Lalithag-19/Leave-Management-System.git',
         },
     ];
 
     return (
         <AnimatedSection id="projects">
-            <h2 className="section-heading">Some Things I've Built</h2>
+            <h2 className="section-heading">Projects</h2>
             <div className="projects-grid">
                 {projects.map((project, index) => (
                     <ProjectCard key={index} {...project} />

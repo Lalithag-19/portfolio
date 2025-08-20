@@ -4,18 +4,23 @@ import React from 'react';
 const HeroSection = () => {
     return (
         <section id="home" className="hero-section">
-            <p className="intro">Hi, my name is</p>
-            <h1 className="name">Lalitha Gowaravarapu.</h1>
-            <h2 className="tagline">I build things for the web.</h2>
+            <p className="intro">Hi,My Name is</p>
+            <h1 className="name">Lalitha Gowravarapu.</h1>
+            <h2 className="tagline">I craft digital experiences for the web.</h2>
             <p className="description">
-                I'm a final-year Computer Science student with a passion for Data Structures, Algorithms, and Computer Networks. I enjoy applying core computer science concepts to solve problems and build applications.
+                I’m a passionate Computer Science student, specializing in building modern, performant, and accessible web applications. I love transforming ideas into reality using code and am always eager to learn and grow as a developer.
             </p>
-            <button
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="btn hero-btn"
-            >
-                Check out my work!
-            </button>
+            <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', marginTop: '2.5rem' }}>
+                <button
+                    onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="btn hero-btn"
+                >
+                    View Projects
+                </button>
+                <a href="#contact" className="btn hero-btn" style={{ background: '#fff', color: 'var(--primary-color)', border: '1.5px solid var(--primary-color)' }}>
+                    Contact Me
+                </a>
+            </div>
         </section>
     );
 };

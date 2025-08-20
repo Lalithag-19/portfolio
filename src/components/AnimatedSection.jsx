@@ -1,40 +1,36 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-// This component uses the Intersection Observer API to add a 'visible' class
-// when it comes into view, triggering a CSS animation.
-const AnimatedSection = ({ children, id }) => {
+const AnimatedSection = ({ children, id, delay = 0, observerOptions = { threshold: 0.1 } }) => {
     const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef(null);
 
     useEffect(() => {
+        const node = sectionRef.current;
+        if (!node) return;
+
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
-                    setIsVisible(true);
-                    observer.unobserve(sectionRef.current);
+                    setTimeout(() => setIsVisible(true), delay);
+                    observer.unobserve(node);
                 }
             },
-            {
-                threshold: 0.1, // Trigger when 10% of the section is visible
-            }
+            observerOptions
         );
 
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
-        }
+        observer.observe(node);
 
         return () => {
-            if (sectionRef.current) {
-                observer.unobserve(sectionRef.current);
-            }
+            observer.unobserve(node);
         };
-    }, []);
+    }, [delay, observerOptions]);
 
     return (
         <section
             id={id}
             ref={sectionRef}
-            className={`animated-section ${isVisible ? 'visible' : ''}`}
+            className={`animated-section${isVisible ? ' visible' : ''}`}
+            tabIndex={-1}
         >
             {children}
         </section>
