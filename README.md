@@ -1,3 +1,4 @@
+visit my portfolio:  https://lalithag-19.github.io/portfolio/
 # React Portfolio 
 This project is a modern, single-page portfolio website built with React. It is designed to be clean, professional, and fully responsive, showcasing personal information, skills, and projects in a structured way. ## Features  
 **Component-Based Architecture:** The application is broken down into reusable React components for easy maintenance and scalability. 
